@@ -946,9 +946,14 @@
                 renderKeys();
             }
         }
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', loadKeys);
-        document.addEventListener('DOMContentLoaded', clearKeyOutput);
+        
+        // --- ALTERAÇÃO FEITA AQUI ---
+        // Inicialização: Garante que o código JavaScript só execute depois que o DOM estiver pronto.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadKeys();
+            clearKeyOutput();
+        });
+        // --- FIM DA ALTERAÇÃO ---
     </script>
 </body>
 </html>
